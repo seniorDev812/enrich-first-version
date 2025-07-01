@@ -20,12 +20,12 @@ const PlatformSettings: React.FC<PlatformSettingsProps> = ({ settings, onSetting
   };
 
   const platforms = [
-    { key: 'facebook' as const, label: t('facebook'), icon: '📘' },
-    { key: 'instagram' as const, label: t('instagram'), icon: '📷' },
-    { key: 'whatsapp' as const, label: t('whatsapp'), icon: '💬' },
-    { key: 'telegram' as const, label: t('telegram'), icon: '✈️' },
-    { key: 'truecaller' as const, label: t('truecaller'), icon: '📞' },
-    { key: 'me' as const, label: t('me'), icon: '🔍' },
+    { key: 'facebook' as const, label: t('facebook'), icon: '/icon/facebook.png' },
+    { key: 'instagram' as const, label: t('instagram'), icon: '/icon/instagram.png' },
+    { key: 'whatsapp' as const, label: t('whatsapp'), icon: '/icon/whatsapp.png' },
+    { key: 'telegram' as const, label: t('telegram'), icon: '/icon/telegram.png' },
+    { key: 'truecaller' as const, label: t('truecaller'), icon: '/icon/truecaller.png' },
+    { key: 'me' as const, label: t('me'), icon: '/icon/me app.png' },
   ];
 
   return (
@@ -44,7 +44,11 @@ const PlatformSettings: React.FC<PlatformSettingsProps> = ({ settings, onSetting
               htmlFor={platform.key}
               className="flex items-center gap-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
             >
-              <span className="text-lg">{platform.icon}</span>
+              <img 
+                src={platform.icon} 
+                alt={platform.label}
+                className="w-6 h-6 object-contain"
+              />
               {platform.label}
             </label>
           </div>
